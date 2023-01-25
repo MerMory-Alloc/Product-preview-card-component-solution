@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root{
+  --dark-cyan:hsl(158, 36%, 37%);
+  --cream:hsl(30, 38%, 92%);
+  --dark-blue:hsl(212, 21%, 14%);
+  --dark-gray:hsl(228, 12%, 48%);
+  --white:hsl(0, 0%, 100%);
+}
+
+html{
+  font-size: 14px;
+}
+
+
+*,::after,::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: var(--cream);
+}
+
+main{
+  height: calc(100vh - 1rem);
+  display: grid;
+  place-items:center;
+}
+
+.container{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  width:550px;
+  margin: auto;
+  border-radius: 1rem;
+  background-color: var(--white);
+}
+
+.image{
+  background-image: url(./images/image-product-desktop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.text-container{
+  padding: 2.2em;
+  color: var(--dark-gray);
+  font-family: Montserrat,sans-serif;
+}
+
+.text-container *:not(:first-child) {
+  margin-top:1.5rem;
+}
+
+.category{
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title{
+  color: var(--dark-blue);
+  font-family: Fraunces,serif;
+  font-weight: 500;
+  letter-spacing: 0.05em
+}
+
+.desc{
+  line-height: 1.5rem;
+  letter-spacing: -0.03em
+}
+
+.price{
+  font-size: 2rem;
+  font-family: Fraunces,serif;
+  color: var(--dark-cyan);
+}
+
+.off-price{
+  font-family: Montserrat,sans-serif;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  position: relative;
+  bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.buy{
+  width:100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-cyan);
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  position: relative;
+}
+
+.buy:hover{
+  background-color:  hsl(158, 36%, 20%);
+}
+
+.btn-icon{
+  margin-right: 0.7em;
+}
+
+.attribution{
+}
+
+@media only screen and (max-width:600px) {
+  main{
+    height: auto;
+    padding: 2rem;
+  }
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 1.2fr;
+    width:375px;
+  }
+
+  .image{
+    background-image: url(./images/image-product-mobile.jpg);
+    border-radius: 1rem 1rem 0 0;
+    background-size: cover;
+  }
+
+}
